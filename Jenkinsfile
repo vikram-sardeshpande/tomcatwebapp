@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        containerName = "vikram-sardeshpande/tomcatwebapp"
+        containerName = "vikramsardeshpande/tomcatwebapp"
         container_version = "2.0.0.${BUILD_ID}"
         dockerTag = "${containerName}:${container_version}"
     }
