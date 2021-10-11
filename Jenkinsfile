@@ -29,14 +29,14 @@ pipeline {
 
                   }
             }
-      }
+      
         stage('Docker Cleanup') {
               steps {
                 sh "docker images ${dockerTag} -q | tee ./xxx"
             sh 'docker rmi `cat ./xxx` --force ||exit 0'
             }
         }
-        
+     }   
    post {
         always {
             echo 'Clean up work directory'
