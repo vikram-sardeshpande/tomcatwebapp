@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        containerName = "vikramsardeshpande/persistent-web-app"
-        container_version = "1.0.0.${BUILD_ID}"
+        containerName = "vikram-sardeshpande/tomcatwebapp"
+        container_version = "2.0.0.${BUILD_ID}"
         dockerTag = "${containerName}:${container_version}"
     }
     stages{
@@ -30,4 +30,3 @@ pipeline {
         
     }
 } 
-         

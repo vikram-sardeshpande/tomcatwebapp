@@ -24,7 +24,7 @@ RUN mkdir -p /data/
 WORKDIR /data
 
 # perform git clone
-RUN git clone https://github.com/vikramsardeshpande/tomcatwebapp.git
+RUN git clone https://github.com/vikram-sardeshpande/tomcatwebapp.git
 
 # switch to tomcatwebapp directory
 WORKDIR /data/tomcatwebapp/tomcatwebapp
