@@ -43,6 +43,6 @@
 </repositories>
 
   <build>
-    <finalName>PersistentWebApp</finalName>
+    <finalName>tomcatwebapp</finalName>
   </build>
 </project>
