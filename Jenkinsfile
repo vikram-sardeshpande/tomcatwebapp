@@ -25,7 +25,6 @@ pipeline {
                 steps {
                     sh 'docker rm -f test'
                     sh 'docker run -it --name test -d -p 9000:8080 ${dockerTag}'
-                    sh 'docker exec -it test tomcat7 start'
 
                   }
             }
