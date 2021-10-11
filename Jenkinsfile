@@ -21,6 +21,15 @@ pipeline {
              }
         }
       }
+        stage ('Deploy Container') {
+                steps {
+                    sh 'docker rm -f test'
+                    sh 'docker run -it --name test -d -p 9000:8080 ${dockerTag}'
+                    sh 'docker exec -it test tomcat7 start'
+
+                  }
+            }
+      }
         stage('Docker Cleanup') {
               steps {
                 sh "docker images ${dockerTag} -q | tee ./xxx"
@@ -28,5 +37,10 @@ pipeline {
             }
         }
         
+   post {
+        always {
+            echo 'Clean up work directory'
+            deleteDir() /* clean up our workspace */
+        }
     }
 } 
